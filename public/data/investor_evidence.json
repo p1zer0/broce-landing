@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-02-13T12:56:25.353794",
+  "pipeline": {
+    "total_tests": 5,
+    "total_calibrations": 0,
+    "best_force_kn": 16.9,
+    "best_config": "C3",
+    "best_zone": "ELBOW",
+    "mean_prediction_error_pct": 34.5,
+    "level_2_achieved": true,
+    "level_2_thickness_mm": 2.6,
+    "evidence_claims_synced": 6,
+    "last_calibration": "",
+    "last_test": "DT_20260213_125625_ELBOW_C3"
+  },
+  "tests": [
+    {
+      "test_id": "DT_20260213_125625_HIP_C1",
+      "timestamp": "2026-02-13T12:56:25.341890",
+      "zone": "HIP",
+      "config_id": "C1",
+      "config_name": "Lattice only",
+      "measured_force_kn": 32.5,
+      "peak_force_kn": 34.0,
+      "temperature_c": 23.0,
+      "impact_position": "center",
+      "predicted_force_kn": 50.0,
+      "prediction_error_pct": -35.0,
+      "level_1_pass": true,
+      "level_2_pass": false,
+      "stf_concentration_pct": 40.0,
+      "relative_density": 0.14,
+      "shore": 98,
+      "lattice_type": "gyroid",
+      "notes": "Lattice only baseline",
+      "photo_id": ""
+    },
+    {
+      "test_id": "DT_20260213_125625_HIP_C2",
+      "timestamp": "2026-02-13T12:56:25.344663",
+      "zone": "HIP",
+      "config_id": "C2",
+      "config_name": "Lattice + STF",
+      "measured_force_kn": 21.3,
+      "peak_force_kn": 23.1,
+      "temperature_c": 23.0,
+      "impact_position": "center",
+      "predicted_force_kn": 33.33,
+      "prediction_error_pct": -36.1,
+      "level_1_pass": true,
+      "level_2_pass": false,
+      "stf_concentration_pct": 40.0,
+      "relative_density": 0.14,
+      "shore": 98,
+      "lattice_type": "gyroid",
+      "notes": "STF reduces ~35%",
+      "photo_id": ""
+    },
+    {
+      "test_id": "DT_20260213_125625_HIP_C3",
+      "timestamp": "2026-02-13T12:56:25.346059",
+      "zone": "HIP",
+      "config_id": "C3",
+      "config_name": "Apex System",
+      "measured_force_kn": 17.8,
+      "peak_force_kn": 19.1,
+      "temperature_c": 23.0,
+      "impact_position": "center",
+      "predicted_force_kn": 26.67,
+      "prediction_error_pct": -33.2,
+      "level_1_pass": true,
+      "level_2_pass": true,
+      "stf_concentration_pct": 40.0,
+      "relative_density": 0.14,
+      "shore": 98,
+      "lattice_type": "gyroid",
+      "notes": "Apex system \u2014 L2 pass!",
+      "photo_id": ""
+    },
+    {
+      "test_id": "DT_20260213_125625_KNEE_C3",
+      "timestamp": "2026-02-13T12:56:25.347563",
+      "zone": "KNEE",
+      "config_id": "C3",
+      "config_name": "Apex System",
+      "measured_force_kn": 18.2,
+      "peak_force_kn": 19.5,
+      "temperature_c": 23.0,
+      "impact_position": "center",
+      "predicted_force_kn": 26.67,
+      "prediction_error_pct": -31.8,
+      "level_1_pass": true,
+      "level_2_pass": true,
+      "stf_concentration_pct": 40.0,
+      "relative_density": 0.14,
+      "shore": 98,
+      "lattice_type": "gyroid",
+      "notes": "Knee Apex",
+      "photo_id": ""
+    },
+    {
+      "test_id": "DT_20260213_125625_ELBOW_C3",
+      "timestamp": "2026-02-13T12:56:25.349256",
+      "zone": "ELBOW",
+      "config_id": "C3",
+      "config_name": "Apex System",
+      "measured_force_kn": 16.9,
+      "peak_force_kn": 18.3,
+      "temperature_c": 23.0,
+      "impact_position": "center",
+      "predicted_force_kn": 26.67,
+      "prediction_error_pct": -36.6,
+      "level_1_pass": true,
+      "level_2_pass": true,
+      "stf_concentration_pct": 40.0,
+      "relative_density": 0.14,
+      "shore": 98,
+      "lattice_type": "gyroid",
+      "notes": "Elbow \u2014 best result",
+      "photo_id": ""
+    }
+  ],
+  "zone_best": {
+    "HIP": {
+      "force_kn": 17.8,
+      "config": "Apex System",
+      "level_2": true,
+      "date": "2026-02-13"
+    },
+    "KNEE": {
+      "force_kn": 18.2,
+      "config": "Apex System",
+      "level_2": true,
+      "date": "2026-02-13"
+    },
+    "ELBOW": {
+      "force_kn": 16.9,
+      "config": "Apex System",
+      "level_2": true,
+      "date": "2026-02-13"
+    }
+  },
+  "claims": [],
+  "patent_status": {
+    "DPMA_001": {
+      "title": "STF-Infiltrated TPMS",
+      "status": "ready_to_file",
+      "mapping": "PAT-004"
+    },
+    "DPMA_002": {
+      "title": "Integriertes Garment System",
+      "status": "ready_to_file",
+      "mapping": "PAT-006"
+    },
+    "DPMA_003": {
+      "title": "K\u00f6rperadaptive Gradierung",
+      "status": "ready_to_file",
+      "mapping": "PAT-005"
+    }
+  },
+  "milestones": [
+    {
+      "name": "Gold Standard STLs",
+      "status": "complete",
+      "date": "2026-02-02"
+    },
+    {
+      "name": "Patent Drafts",
+      "status": "complete",
+      "date": "2026-02-10"
+    },
+    {
+      "name": "Simulation L2 Validated",
+      "status": "complete",
+      "date": "2026-02-05"
+    },
+    {
+      "name": "Physical Drop-Tower Test",
+      "status": "pending",
+      "date": null
+    },
+    {
+      "name": "EN 1621-1 Certification",
+      "status": "pending",
+      "date": null
+    }
+  ]
+}

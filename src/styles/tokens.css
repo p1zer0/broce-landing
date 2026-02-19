@@ -1,0 +1,220 @@
+/* ═══════════════════════════════════════════════
+   BROCE™ Design Tokens — v4.0 Ultra-Premium
+   ═══════════════════════════════════════════════
+   Refined palette for a quieter luxury aesthetic.
+   Less saturated, more tonal depth, true 
+   editorial fashion-brand feel.
+   ═══════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════════
+   DARK THEME (DEFAULT) — Deep Charcoal + Muted Olive
+   Inspired by the navy suit with olive stitching.
+   Darker, richer, less "tech dashboard", more
+   "Acne Studios meets Apple"
+   ════════════════════════════════════════════════ */
+
+:root,
+[data-theme="dark"] {
+  /* ── Backgrounds — deeper, richer ── */
+  --bg-0: #090D14;
+  --bg-1: #0E1420;
+  --bg-2: #141C2B;
+  --bg-gate: #060910;
+
+  /* ── Surfaces — true glass layers ── */
+  --surface: rgba(16, 24, 40, 0.55);
+  --surface-strong: rgba(20, 30, 50, 0.85);
+  --surface-soft: rgba(14, 20, 34, 0.40);
+  --surface-gate: #0A0F18;
+  --surface-glass: rgba(16, 24, 40, 0.35);
+
+  /* ── Lines & Borders — barely-there ── */
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --line-subtle: rgba(255, 255, 255, 0.04);
+
+  /* ── Text — high contrast hierarchy ── */
+  --text: #F5F5F7;
+  --text-soft: rgba(245, 245, 247, 0.72);
+  --text-muted: rgba(245, 245, 247, 0.44);
+  --text-dim: rgba(245, 245, 247, 0.22);
+
+  /* ── Accent — Desaturated Sage / Olive ── */
+  --accent: #7CA882;
+  --accent-strong: #5C8B63;
+  --accent-soft: rgba(124, 168, 130, 0.12);
+  --accent-dim: rgba(124, 168, 130, 0.07);
+  --accent-glow: rgba(124, 168, 130, 0.04);
+
+  /* ── Warm — Muted Gold / Champagne ── */
+  --warm: #C4A870;
+  --warm-soft: rgba(196, 168, 112, 0.14);
+
+  /* ── Semantic ── */
+  --success: #7CA882;
+  --success-dim: rgba(124, 168, 130, 0.10);
+  --success-glow: rgba(124, 168, 130, 0.04);
+  --error: #D45B5B;
+
+  /* ── Shadows — layered, cinematic ── */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.16), 0 12px 28px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.20), 0 20px 44px rgba(0, 0, 0, 0.16);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.24), 0 32px 72px rgba(0, 0, 0, 0.20);
+  --shadow-glow: 0 0 40px rgba(124, 168, 130, 0.10), 0 0 80px rgba(124, 168, 130, 0.05);
+
+  /* ── Theme Toggle ── */
+  --toggle-bg: rgba(14, 20, 34, 0.7);
+  --toggle-border: rgba(124, 168, 130, 0.18);
+  --toggle-hover: rgba(124, 168, 130, 0.08);
+
+  /* ── Mat Texture (dark) ── */
+  --mat-dot: rgba(255, 255, 255, 0.03);
+  --mat-line: rgba(255, 255, 255, 0.02);
+  --mat-cross: rgba(255, 255, 255, 0.025);
+
+  /* ── Legacy Aliases (for pages.css compat) ── */
+  --fg: var(--text);
+  --muted: var(--text-soft);
+  --faint: var(--text-muted);
+  --border: var(--line);
+  --bg-card-solid: rgba(14, 20, 34, 0.65);
+  --accent-8: rgba(124, 168, 130, 0.08);
+  --accent-15: rgba(124, 168, 130, 0.15);
+  --accent-30: rgba(124, 168, 130, 0.30);
+  --accent-glow-8: rgba(124, 168, 130, 0.08);
+  --radius-l: var(--radius-lg);
+  --radius-m: var(--radius-md);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ════════════════════════════════════════════════
+   LIGHT THEME — Ivory + Warm Stone
+   Less "beige app", more "editorial magazine".
+   Think: Kinfolk, Cereal, Acne Studios
+   ════════════════════════════════════════════════ */
+
+[data-theme="light"] {
+  /* ── Backgrounds — true warm ivory ── */
+  --bg-0: #FAF8F5;
+  --bg-1: #F4F1EC;
+  --bg-2: #ECE8E1;
+  --bg-gate: #F7F5F1;
+
+  /* ── Surfaces — barely tinted ── */
+  --surface: rgba(240, 236, 228, 0.50);
+  --surface-strong: rgba(236, 232, 225, 0.80);
+  --surface-soft: rgba(244, 241, 236, 0.40);
+  --surface-gate: #F2EFE9;
+  --surface-glass: rgba(250, 248, 245, 0.60);
+
+  /* ── Lines — whisper thin ── */
+  --line: rgba(0, 0, 0, 0.06);
+  --line-strong: rgba(0, 0, 0, 0.12);
+  --line-subtle: rgba(0, 0, 0, 0.03);
+
+  /* ── Text — true editorial hierarchy ── */
+  --text: #1A1A1A;
+  --text-soft: rgba(26, 26, 26, 0.68);
+  --text-muted: rgba(26, 26, 26, 0.40);
+  --text-dim: rgba(26, 26, 26, 0.20);
+
+  /* ── Accent — Warm Terracotta ── */
+  --accent: #B8734A;
+  --accent-strong: #9A5D38;
+  --accent-soft: rgba(184, 115, 74, 0.10);
+  --accent-dim: rgba(184, 115, 74, 0.06);
+  --accent-glow: rgba(184, 115, 74, 0.03);
+
+  /* ── Warm ── */
+  --warm: #9A5D38;
+  --warm-soft: rgba(154, 93, 56, 0.10);
+
+  /* ── Semantic ── */
+  --success: #5C8B63;
+  --success-dim: rgba(92, 139, 99, 0.08);
+  --success-glow: rgba(92, 139, 99, 0.03);
+  --error: #C04040;
+
+  /* ── Shadows — subtle, layered ── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05), 0 10px 24px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 18px 40px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.08), 0 28px 64px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 40px rgba(184, 115, 74, 0.06), 0 0 80px rgba(184, 115, 74, 0.03);
+
+  /* ── Theme Toggle ── */
+  --toggle-bg: rgba(240, 236, 228, 0.75);
+  --toggle-border: rgba(184, 115, 74, 0.18);
+  --toggle-hover: rgba(184, 115, 74, 0.06);
+
+  /* ── No mat in light mode ── */
+  --mat-dot: transparent;
+  --mat-line: transparent;
+  --mat-cross: transparent;
+
+  /* ── Legacy Aliases (light) ── */
+  --fg: var(--text);
+  --muted: var(--text-soft);
+  --faint: var(--text-muted);
+  --border: var(--line);
+  --bg-card-solid: rgba(242, 235, 225, 0.65);
+  --accent-8: rgba(184, 115, 74, 0.08);
+  --accent-15: rgba(184, 115, 74, 0.15);
+  --accent-30: rgba(184, 115, 74, 0.30);
+  --accent-glow-8: rgba(184, 115, 74, 0.08);
+}
+
+/* ════════════════════════════════════════════════
+   SHARED TOKENS (Theme-agnostic)
+   ════════════════════════════════════════════════ */
+
+:root {
+  /* ── Radii — slightly larger for luxury feel ── */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* ── Layout ── */
+  --container: 1200px;
+  --header-height: 72px;
+
+  /* ── Timing — slower = more luxurious ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 350ms;
+  --duration-slow: 600ms;
+
+  /* ── Z-Index Scale ── */
+  --z-ambient: -1;
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-header: 90;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-gate: 300;
+}
+
+/* ═══════════════════════════════════════════════
+   THEME TRANSITION — silky smooth
+   ═══════════════════════════════════════════════ */
+
+html {
+  transition: background-color 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+}
+
+body,
+.site-header,
+.site-footer,
+.ambient-gradient,
+.ambient-grid,
+.cta-panel,
+.top-note {
+  transition: background 0.6s var(--ease-smooth),
+    border-color 0.6s var(--ease-smooth),
+    color 0.6s var(--ease-smooth);
+}

@@ -1,0 +1,636 @@
+/* ═══════════════════════════════════════════════
+   BROCE™ Intelligence Layer v2 — Styles
+   ═══════════════════════════════════════════════
+   Scroll-spy, command palette, text decode,
+   and FLIP transitions.
+   ═══════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════
+   SCROLL-SPY INDICATOR  
+   ═══════════════════════════════════════════════
+   A thin accent-colored dot that slides under 
+   the currently active nav link.
+   ═══════════════════════════════════════════════ */
+
+.spy-indicator {
+    position: absolute;
+    bottom: -2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    transition: left 0.4s var(--ease-out), opacity 0.3s ease;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.site-nav a.spy-active {
+    color: var(--accent) !important;
+    transition: color 0.3s ease;
+}
+
+
+/* ═══════════════════════════════════════════════
+   COMMAND PALETTE (Cmd+K)
+   ═══════════════════════════════════════════════
+   Minimal search overlay for instant navigation.
+   Typography-focused, no chrome.
+   ═══════════════════════════════════════════════ */
+
+.cmd-palette {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: min(20vh, 180px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cmd-palette.is-open {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* Backdrop */
+.cmd-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .cmd-backdrop {
+    background: rgba(200, 190, 175, 0.4);
+}
+
+/* Dialog */
+.cmd-dialog {
+    position: relative;
+    width: min(560px, calc(100vw - 32px));
+    max-height: 420px;
+    background: var(--bg-1);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transform: scale(0.96) translateY(-8px);
+    transition: transform 0.25s var(--ease-out);
+}
+
+.cmd-palette.is-open .cmd-dialog {
+    transform: scale(1) translateY(0);
+}
+
+/* Input area */
+.cmd-input-wrap {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    gap: 12px;
+}
+
+.cmd-prompt {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.cmd-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.cmd-input::placeholder {
+    color: var(--text-dim);
+}
+
+.cmd-esc {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2px 6px;
+    flex-shrink: 0;
+}
+
+/* Results list */
+.cmd-results {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    max-height: 340px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.cmd-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    gap: 12px;
+    transition: background 0.15s ease;
+}
+
+.cmd-item:hover,
+.cmd-item.is-selected {
+    background: var(--surface-soft);
+}
+
+.cmd-item.is-selected {
+    background: var(--accent-dim);
+}
+
+.cmd-icon {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cmd-item.is-selected .cmd-icon {
+    color: var(--accent);
+}
+
+.cmd-label {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.cmd-type {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-shrink: 0;
+}
+
+
+/* ═══════════════════════════════════════════════
+   TEXT DECODE EFFECT
+   ═══════════════════════════════════════════════
+   Terminal-style character cycling.
+   Monospace during decode, then back to normal.
+   ═══════════════════════════════════════════════ */
+
+[data-decode] {
+    /* Prevent layout shift during decode */
+    display: inline-block;
+    min-width: 1ch;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PAGE TRANSITIONS
+   ═══════════════════════════════════════════════
+   Native View Transitions API when available,
+   manual FLIP fallback for older browsers.
+   ═══════════════════════════════════════════════ */
+
+/* --- Native View Transitions API --- */
+::view-transition-old(root) {
+    animation: vt-exit 0.15s ease forwards;
+}
+
+::view-transition-new(root) {
+    animation: vt-enter 0.2s ease forwards;
+}
+
+@keyframes vt-exit {
+    to {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+}
+
+@keyframes vt-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+}
+
+/* --- FLIP Fallback (no View Transitions API) --- */
+#app {
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+#app.page-exit {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+#app.page-enter {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+/* --- Skeleton Loading Placeholder --- */
+.route-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 120px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-bar {
+    background: var(--line);
+    border-radius: 6px;
+    opacity: 0.3;
+}
+
+.skeleton-bar--hero {
+    width: 60%;
+    height: 42px;
+}
+
+.skeleton-bar--sub {
+    width: 45%;
+    height: 18px;
+}
+
+.skeleton-bar--body {
+    width: 80%;
+    height: 14px;
+}
+
+.skeleton-bar--wide {
+    width: 100%;
+    height: 200px;
+    margin-top: 16px;
+}
+
+@keyframes skeleton-pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════
+   CMD+K HINT (shown subtly in header)
+   ═══════════════════════════════════════════════ */
+
+.cmd-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--line);
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cmd-hint:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+}
+
+.cmd-hint kbd {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+}
+
+
+/* ═══════════════════════════════════════════════
+   SECTION WIPE — Gradient Sweep
+   ═══════════════════════════════════════════════
+   A thin accent gradient line sweeps from left  
+   to right when a section enters view.
+   ═══════════════════════════════════════════════ */
+
+.section {
+    position: relative;
+}
+
+.section.wipe-entering::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--accent) 50%,
+            transparent 100%);
+    animation: wipe-sweep 0.7s var(--ease-out) forwards;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes wipe-sweep {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left center;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════
+   PARALLAX DEPTH — GPU Hints
+   ═══════════════════════════════════════════════
+   Only promote to GPU layer when animations are
+   active (CSS scroll-driven or JS fallback).
+   Static will-change wastes VRAM.
+   ═══════════════════════════════════════════════ */
+
+.ambient-gradient,
+.ambient-grid,
+.ambient-blob {
+    transform-style: preserve-3d;
+    contain: layout style;
+}
+
+
+/* ═══════════════════════════════════════════════
+   PROGRESSIVE DISCLOSURE — Speed Tiers
+   ═══════════════════════════════════════════════
+   Power users get faster transitions.
+   ═══════════════════════════════════════════════ */
+
+[data-visit="returning"] [data-reveal] {
+    transition-duration: 400ms;
+}
+
+[data-visit="power"] [data-reveal] {
+    transition-duration: 250ms;
+}
+
+[data-visit="power"] [data-stagger-item] {
+    transition-duration: 300ms;
+}
+
+[data-visit="power"] .cmd-dialog {
+    transition-duration: 0.15s;
+}
+
+
+/* ═══════════════════════════════════════════════
+   COUNTER MORPH — Digit Styling
+   ═══════════════════════════════════════════════ */
+
+[data-counter-target][data-morph-state="running"] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+}
+
+
+/* ═══════════════════════════════════════════════
+   NETWORK-AWARE QUALITY
+   ═══════════════════════════════════════════════
+   Reduce visual complexity for slow connections.
+   ═══════════════════════════════════════════════ */
+
+[data-connection="medium"] #cursorGlow,
+[data-connection="medium"] #constellationCanvas {
+    display: none !important;
+}
+
+[data-connection="slow"] #cursorGlow,
+[data-connection="slow"] #constellationCanvas,
+[data-connection="slow"] .ambient-blob {
+    display: none !important;
+}
+
+[data-connection="slow"] [data-reveal],
+[data-connection="slow"] [data-stagger-item] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+[data-connection="slow"] [data-decode] {
+    visibility: visible !important;
+}
+
+[data-connection="slow"] .section.wipe-entering::after {
+    display: none;
+}
+
+
+/* ═══════════════════════════════════════════════
+   CSS SCROLL-DRIVEN PARALLAX
+   ═══════════════════════════════════════════════
+   When the browser supports scroll-driven 
+   animations (animation-timeline: scroll()),
+   parallax runs entirely on the compositor 
+   thread — zero JS, zero jank.
+   
+   JS fallback is still in intelligence-v2.js
+   for browsers without support.
+   ═══════════════════════════════════════════════ */
+
+@supports (animation-timeline: scroll()) {
+    .ambient-gradient {
+        animation: parallax-slow linear both;
+        animation-timeline: scroll();
+        animation-range: 0% 100%;
+    }
+
+    .ambient-grid {
+        animation: parallax-mid linear both;
+        animation-timeline: scroll();
+        animation-range: 0% 100%;
+    }
+
+    .ambient-blob {
+        animation: parallax-fast linear both;
+        animation-timeline: scroll();
+        animation-range: 0% 100%;
+    }
+
+    @keyframes parallax-slow {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-5vh);
+        }
+    }
+
+    @keyframes parallax-mid {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-15vh);
+        }
+    }
+
+    @keyframes parallax-fast {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-30vh);
+        }
+    }
+}
+
+
+/* ═══════════════════════════════════════════════
+   IDLE DETECTION — Dim & Wake
+   ═══════════════════════════════════════════════
+   After 30s of no interaction, the entire UI 
+   dims gently. First interaction wakes it.
+   Creates a "breathing" quality.
+   ═══════════════════════════════════════════════ */
+
+html {
+    transition:
+        filter 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.is-idle {
+    filter: brightness(0.7) saturate(0.8);
+    opacity: 0.85;
+}
+
+html.is-idle * {
+    cursor: none !important;
+}
+
+
+/* ═══════════════════════════════════════════════
+   EXIT-INTENT — Subtle CTA Pulse
+   ═══════════════════════════════════════════════
+   When the user's mouse moves toward exit,
+   the primary CTA briefly glows once.
+   ═══════════════════════════════════════════════ */
+
+@keyframes exit-glow {
+    0% {
+        box-shadow: 0 0 0 0 var(--accent);
+    }
+
+    40% {
+        box-shadow: 0 0 20px 6px var(--accent);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 var(--accent);
+    }
+}
+
+.exit-pulse {
+    animation: exit-glow 1.8s ease-out forwards;
+}
+
+.top-note.exit-pulse {
+    animation: exit-glow 1.8s ease-out 0.2s forwards;
+}
+
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .cmd-palette {
+        padding-top: 60px;
+    }
+
+    .cmd-hint {
+        display: none;
+    }
+
+    .spy-indicator {
+        display: none;
+    }
+
+    .section.wipe-entering::after {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cmd-dialog {
+        transition: none;
+    }
+
+    .spy-indicator {
+        transition: none;
+    }
+
+    #app {
+        transition: none;
+    }
+
+    .section.wipe-entering::after {
+        display: none;
+    }
+
+    html {
+        transition: none;
+    }
+
+    html.is-idle {
+        filter: none;
+        opacity: 1;
+    }
+
+    .exit-pulse {
+        animation: none;
+    }
+}

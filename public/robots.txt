@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow gate and internal pages
+Disallow: /gate.html
+Disallow: /investor-portal*.html
+Disallow: /pitch-deck*.html
+Disallow: /dashboard.html
+Disallow: /scanner.html
+Disallow: /configurator.html
+Disallow: /learning.html
+Disallow: /broce-two-pager.html
+
+# Sitemap
+Sitemap: https://broce.eu/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

@@ -1,0 +1,427 @@
+/* ═══════════════════════════════════════════════
+   BROCE™ Theme Overrides — Light Mode Fixes
+   ═══════════════════════════════════════════════
+   Components that use hardcoded rgba() dark values
+   need light-mode overrides here.
+   ═══════════════════════════════════════════════ */
+
+/* ── Header ── */
+
+[data-theme="light"] .site-header.is-scrolled {
+    background: var(--bg-0);
+    border-color: var(--line);
+    box-shadow: var(--shadow-xs);
+}
+
+[data-theme="light"] .site-nav a {
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .site-nav a:hover {
+    color: var(--text);
+}
+
+[data-theme="light"] .nav-cta {
+    border-color: rgba(212, 128, 74, 0.45);
+    color: var(--accent);
+}
+
+[data-theme="light"] .nav-cta:hover {
+    border-color: rgba(212, 128, 74, 0.7);
+    background: rgba(212, 128, 74, 0.08);
+}
+
+[data-theme="light"] .lang-switch {
+    background: rgba(232, 224, 212, 0.7);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .site-nav a.lang-link.is-active {
+    color: var(--accent);
+    border-color: rgba(212, 128, 74, 0.45);
+    background: var(--accent-dim);
+}
+
+/* ── Buttons ── */
+
+[data-theme="light"] .btn-primary {
+    background: linear-gradient(130deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: #FFFFFF;
+}
+
+[data-theme="light"] .btn-primary:hover {
+    box-shadow: 0 15px 34px rgba(212, 128, 74, 0.35);
+}
+
+[data-theme="light"] .btn-secondary {
+    background: rgba(232, 224, 212, 0.65);
+    border-color: var(--line);
+    color: var(--text);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    border-color: var(--line-strong);
+    background: rgba(232, 224, 212, 0.9);
+}
+
+/* ── Cards & Surfaces ── */
+
+[data-theme="light"] .problem-card,
+[data-theme="light"] .architecture-card,
+[data-theme="light"] .rollout-card,
+[data-theme="light"] .gov-card,
+[data-theme="light"] .persona-console,
+[data-theme="light"] .sim-card,
+[data-theme="light"] .desk-controls,
+[data-theme="light"] .desk-results,
+[data-theme="light"] .scenario-panel,
+[data-theme="light"] .briefing-panel,
+[data-theme="light"] .zone-panel,
+[data-theme="light"] .decision-card {
+    background: rgba(242, 235, 225, 0.7);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .faq-list details {
+    background: rgba(242, 235, 225, 0.65);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .faq-list details[open] {
+    border-color: rgba(212, 128, 74, 0.3);
+}
+
+[data-theme="light"] .faq-list summary::after {
+    color: var(--accent);
+}
+
+/* ── Interactive Elements ── */
+
+[data-theme="light"] .persona-tab {
+    background: rgba(232, 224, 212, 0.65);
+    border-color: var(--line);
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .persona-tab:hover {
+    color: var(--text);
+    border-color: var(--line-strong);
+}
+
+[data-theme="light"] .persona-tab.is-active {
+    color: var(--accent);
+    border-color: rgba(212, 128, 74, 0.5);
+    background: var(--accent-dim);
+}
+
+[data-theme="light"] .persona-details article,
+[data-theme="light"] .sim-results article,
+[data-theme="light"] .desk-kpis article,
+[data-theme="light"] .brief-signals article,
+[data-theme="light"] .hero-metrics article {
+    background: rgba(232, 224, 212, 0.5);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .preset-btn {
+    background: rgba(232, 224, 212, 0.65);
+    border-color: var(--line);
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .preset-btn:hover {
+    color: var(--text);
+    border-color: var(--line-strong);
+}
+
+[data-theme="light"] .preset-btn.is-active {
+    color: var(--accent);
+    border-color: rgba(212, 128, 74, 0.5);
+    background: var(--accent-dim);
+}
+
+/* ── Bars ── */
+
+[data-theme="light"] .bar-track {
+    background: rgba(230, 222, 210, 0.8);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .bar-track span {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-strong) 100%);
+    box-shadow: 0 0 16px rgba(212, 128, 74, 0.35);
+}
+
+/* ── Range / Select ── */
+
+[data-theme="light"] input[type="range"] {
+    background: rgba(230, 222, 210, 0.8);
+    border-color: var(--line);
+}
+
+[data-theme="light"] input[type="range"]::-webkit-slider-thumb {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    box-shadow: 0 2px 10px rgba(212, 128, 74, 0.35);
+    border-color: var(--bg-0);
+}
+
+[data-theme="light"] select {
+    background: rgba(232, 224, 212, 0.65);
+    border-color: var(--line);
+    color: var(--text);
+}
+
+/* ── Score Ring ── */
+
+[data-theme="light"] .score-ring {
+    background: conic-gradient(var(--accent) calc(var(--score) * 1%),
+            rgba(230, 222, 210, 0.8) calc(var(--score) * 1%));
+}
+
+[data-theme="light"] .score-ring::before {
+    background: var(--bg-1);
+}
+
+/* ── CTA Panel ── */
+
+[data-theme="light"] .cta-panel {
+    background: linear-gradient(180deg,
+            rgba(242, 235, 225, 0.75) 0%,
+            rgba(232, 224, 212, 0.6) 100%);
+    border-color: var(--line);
+}
+
+/* ── Footer ── */
+
+[data-theme="light"] .site-footer {
+    background: rgba(234, 227, 217, 0.6);
+    border-color: var(--line-subtle);
+}
+
+/* ── Intel Aside ── */
+
+[data-theme="light"] .intel-aside {
+    background: rgba(242, 235, 225, 0.6);
+    border-color: var(--line);
+}
+
+/* ── Rollout numbering ── */
+
+[data-theme="light"] .arch-index,
+[data-theme="light"] .rollout-card>span {
+    border-color: rgba(212, 128, 74, 0.45);
+    color: var(--accent);
+}
+
+/* ── Mobile nav ── */
+
+@media (max-width: 980px) {
+    [data-theme="light"] .site-nav {
+        background: rgba(248, 245, 240, 0.97);
+    }
+}
+
+/* ── Menu Toggle ── */
+
+[data-theme="light"] .menu-toggle {
+    background: rgba(232, 224, 212, 0.7);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .menu-toggle span {
+    background: var(--text);
+}
+
+/* ── Hero overlay ── */
+
+[data-theme="light"] .hero-visual::after {
+    background: linear-gradient(180deg, rgba(248, 245, 240, 0.05) 48%, rgba(248, 245, 240, 0.88) 100%);
+}
+
+[data-theme="light"] .hero-overlay {
+    border-color: var(--line);
+    background: rgba(248, 245, 240, 0.86);
+}
+
+[data-theme="light"] .hero-overlay p {
+    color: var(--accent);
+}
+
+/* ── Scrollbar ── */
+
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: var(--bg-0);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+}
+
+/* ── Selection ── */
+
+[data-theme="light"] ::selection {
+    background: var(--accent-soft);
+    color: var(--text);
+}
+
+/* ══════════════════════════════════════════════
+   THEME TOGGLE — Contrast Circle
+   ══════════════════════════════════════════════
+   A half-filled circle: universal contrast 
+   symbol. Rotates 180° on theme change.
+   No emojis, no cartoon icons — pure geometry.
+   ══════════════════════════════════════════════ */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-out);
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.92);
+}
+
+/* The contrast circle — half filled, half empty */
+.theme-toggle .contrast-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1.5px solid var(--text-muted);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s var(--ease-out), border-color 0.3s ease;
+}
+
+/* Filled half */
+.theme-toggle .contrast-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--text-muted);
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover .contrast-icon {
+    border-color: var(--accent);
+}
+
+.theme-toggle:hover .contrast-icon::after {
+    background: var(--accent);
+}
+
+/* Rotate on theme change */
+[data-theme="light"] .theme-toggle .contrast-icon {
+    transform: rotate(180deg);
+}
+
+/* ── Page-specific overrides ── */
+
+/* Tech spec tags */
+[data-theme="light"] .tech-spec-tags span {
+    background: rgba(212, 128, 74, 0.08);
+    border-color: rgba(212, 128, 74, 0.20);
+    color: var(--accent-strong);
+}
+
+/* Product filter chips */
+[data-theme="light"] .filter-chip {
+    background: rgba(232, 224, 212, 0.6);
+    border-color: var(--line);
+    color: var(--text-muted);
+}
+
+[data-theme="light"] .filter-chip.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* Product cards */
+[data-theme="light"] .product-card-page {
+    background: rgba(242, 235, 225, 0.7);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .product-badge-page {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Value cards */
+[data-theme="light"] .value-card {
+    background: rgba(242, 235, 225, 0.6);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .value-icon {
+    border-color: rgba(212, 128, 74, 0.3);
+    color: var(--accent);
+}
+
+/* Timeline */
+[data-theme="light"] .timeline::before {
+    background: var(--line);
+}
+
+[data-theme="light"] .timeline-item::before {
+    background: var(--accent);
+    border-color: var(--bg-0);
+}
+
+/* Investor cards */
+[data-theme="light"] .investor-metric-card,
+[data-theme="light"] .investor-portal-card,
+[data-theme="light"] .evidence-card-v2,
+[data-theme="light"] .milestone-card {
+    background: rgba(242, 235, 225, 0.65);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .tech-deep-card {
+    background: rgba(242, 235, 225, 0.65);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .tech-deep-icon {
+    border-color: rgba(212, 128, 74, 0.35);
+    color: var(--accent);
+}
+
+/* Progress bar */
+[data-theme="light"] .progress-bar-bg {
+    background: rgba(230, 222, 210, 0.8);
+    border-color: var(--line);
+}
+
+[data-theme="light"] .progress-bar-fill {
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+}
+
+/* Evidence badges */
+[data-theme="light"] .evidence-badge.verified {
+    background: rgba(92, 184, 122, 0.12);
+    color: #3D9960;
+}
+
+/* Live dot */
+[data-theme="light"] .live-pulse {
+    background: var(--success);
+}

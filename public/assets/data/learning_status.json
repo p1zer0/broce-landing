@@ -1,0 +1,21 @@
+{
+  "total_events": 3627,
+  "total_work_orders": 1002,
+  "total_beliefs": 9,
+  "beliefs": [
+    {
+      "cat": "agent",
+      "conf": 66.3
+    },
+    {
+      "cat": "design",
+      "conf": 59.0
+    },
+    {
+      "cat": "production",
+      "conf": 66.3
+    }
+  ],
+  "total_candidates": 16,
+  "generated_at": "2026-02-05T16:09:53.168708"
+}
