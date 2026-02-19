@@ -15,11 +15,11 @@
 
 :root,
 [data-theme="dark"] {
-  /* ── Backgrounds — deeper, richer ── */
-  --bg-0: #090D14;
-  --bg-1: #0E1420;
-  --bg-2: #141C2B;
-  --bg-gate: #060910;
+  /* ── Backgrounds — deeper, richer (OKLCH for perceptual uniformity) ── */
+  --bg-0: oklch(12% 0.015 247);  /* #090D14 equivalent, richer on OLED */
+  --bg-1: oklch(15% 0.018 247);
+  --bg-2: oklch(19% 0.020 247);
+  --bg-gate: oklch(9% 0.012 247);
 
   /* ── Surfaces — true glass layers ── */
   --surface: rgba(16, 24, 40, 0.55);
@@ -39,12 +39,12 @@
   --text-muted: rgba(245, 245, 247, 0.44);
   --text-dim: rgba(245, 245, 247, 0.22);
 
-  /* ── Accent — Desaturated Sage / Olive ── */
-  --accent: #7CA882;
-  --accent-strong: #5C8B63;
-  --accent-soft: rgba(124, 168, 130, 0.12);
-  --accent-dim: rgba(124, 168, 130, 0.07);
-  --accent-glow: rgba(124, 168, 130, 0.04);
+  /* ── Accent — Desaturated Sage / Olive (OKLCH) ── */
+  --accent: oklch(70% 0.08 145);  /* Living sage, natural warmth */
+  --accent-strong: oklch(60% 0.10 145);
+  --accent-soft: oklch(70% 0.08 145 / 0.12);
+  --accent-dim: oklch(70% 0.08 145 / 0.07);
+  --accent-glow: oklch(70% 0.08 145 / 0.04);
 
   /* ── Warm — Muted Gold / Champagne ── */
   --warm: #C4A870;
@@ -197,6 +197,19 @@
   --z-overlay: 100;
   --z-modal: 200;
   --z-gate: 300;
+
+  /* ── Spacing — 4px grid system (Restrained Precision) ── */
+  --space-unit: 4px;
+  --space-2xs: calc(var(--space-unit) * 1);  /*  4px */
+  --space-xs:  calc(var(--space-unit) * 2);  /*  8px */
+  --space-sm:  calc(var(--space-unit) * 3);  /* 12px */
+  --space-md:  calc(var(--space-unit) * 4);  /* 16px */
+  --space-lg:  calc(var(--space-unit) * 6);  /* 24px */
+  --space-xl:  calc(var(--space-unit) * 8);  /* 32px */
+  --space-2xl: calc(var(--space-unit) * 12); /* 48px */
+  --space-3xl: calc(var(--space-unit) * 16); /* 64px */
+  --space-4xl: calc(var(--space-unit) * 24); /* 96px */
+  --space-5xl: calc(var(--space-unit) * 32); /* 128px */
 }
 
 /* ═══════════════════════════════════════════════

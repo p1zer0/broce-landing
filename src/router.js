@@ -106,10 +106,14 @@ async function resolve() {
 
     // === VIEW TRANSITIONS API (native) ===
     if (supportsViewTransitions) {
+        document.documentElement.dataset.transitionPath = path;
         const transition = document.startViewTransition(async () => {
             await swap();
         });
-        transition.finished.then(finish).catch(finish);
+        transition.finished.then(() => {
+            delete document.documentElement.dataset.transitionPath;
+            finish();
+        }).catch(finish);
         return;
     }
 

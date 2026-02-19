@@ -95,7 +95,12 @@ export function initIdleDetection() {
 
     const events = ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll', 'wheel'];
 
+    let wakeThrottle = false;
     const wake = () => {
+        if (wakeThrottle) return;
+        wakeThrottle = true;
+        setTimeout(() => { wakeThrottle = false; }, 100);
+
         if (isIdle) {
             isIdle = false;
             document.documentElement.classList.remove('is-idle');
