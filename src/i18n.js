@@ -302,6 +302,18 @@ const translations = {
         'about.cta.btn': 'Get in Touch',
         'about.cta.btn2': 'Investor Portal',
 
+        // About — Material Heritage
+        'about.materials.eyebrow': 'Material DNA',
+        'about.materials.title': 'Bio-Mechanical Symbiosis',
+        'about.materials.subtitle': 'We combine the radical energy absorption of STF with nature\'s finest fibers.',
+        'about.hemp.title': 'Carbon Negative Strength',
+        'about.hemp.text': 'Hemp offers the highest tensile strength of all natural fibers—the structural backbone of our protective textiles.',
+        'about.merino.title': 'Biological Precision',
+        'about.merino.text': 'Next to skin, merino provides thermal stability. It responds to body temperature before you feel it.',
+        'about.dyneema.title': 'Only Where Necessary',
+        'about.dyneema.text': 'The strongest fiber in the world—15× stronger than steel at the same weight. We use it exclusively where impact distribution demands it. As thin as possible.',
+        'about.materials.philosophy': 'The least amount of the best technology. Every gram must earn its place.',
+
         // ── Investor Page ──
         'investor.hero.eyebrow': 'Investor Relations',
         'investor.hero.title': 'Building the Category of Precision Bodywear',
@@ -648,6 +660,18 @@ const translations = {
         'about.cta.text': 'Ob potenzieller Partner, Investor oder Pilot-Teilnehmer – wir freuen uns von Ihnen zu hören.',
         'about.cta.btn': 'Kontakt aufnehmen',
         'about.cta.btn2': 'Investorenportal',
+
+        // About — Material Heritage
+        'about.materials.eyebrow': 'Material-DNA',
+        'about.materials.title': 'Bio-Mechanische Symbiose',
+        'about.materials.subtitle': 'Die radikale Energieabsorption von STF trifft auf die edelsten Fasern der Natur.',
+        'about.hemp.title': 'Carbon-Negative Stärke',
+        'about.hemp.text': 'Hanf bietet die höchste Zugfestigkeit aller Naturfasern — das strukturelle Rückgrat unserer Protective Textiles.',
+        'about.merino.title': 'Biologische Präzision',
+        'about.merino.text': 'Direkt auf der Haut sorgt Merino für thermische Stabilität. Es reagiert auf Körpertemperatur, bevor du es spürst.',
+        'about.dyneema.title': 'Nur dort, wo es nötig ist',
+        'about.dyneema.text': 'Die stärkste Faser der Welt — 15× stärker als Stahl bei gleichem Gewicht. Wir setzen sie ausschließlich dort ein, wo Impact Distribution es erfordert.',
+        'about.materials.philosophy': 'Die wenigste Menge der besten Technologie. Jedes Gramm muss seinen Platz verdienen.',
 
         // ── Investor Page ──
         'investor.hero.eyebrow': 'Investorenbeziehungen',
