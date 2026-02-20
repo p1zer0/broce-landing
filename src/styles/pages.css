@@ -1230,6 +1230,173 @@
 }
 
 /* ═══════════════════════════════════════════════
+   MATERIAL HERITAGE — About Page
+   ═══════════════════════════════════════════════ */
+
+.material-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg, 24px);
+    margin-top: var(--space-xl, 32px);
+}
+
+.material-card {
+    position: relative;
+    background: var(--bg-1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line-subtle);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--duration-normal) var(--ease-smooth),
+        border-color var(--duration-normal) var(--ease-smooth);
+}
+
+.material-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-soft);
+}
+
+.material-card-full {
+    grid-column: 1 / -1;
+}
+
+.material-card-full .material-texture {
+    height: 160px;
+}
+
+.material-texture {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-2);
+}
+
+/* Grain overlay — editorial film texture */
+.material-texture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hemp — diagonal fiber structure */
+.hemp-texture {
+    background-color: oklch(25% 0.02 80);
+    background-image:
+        repeating-linear-gradient(45deg,
+            var(--line-subtle) 0px,
+            transparent 2px,
+            transparent 10px),
+        radial-gradient(circle at 50% 50%, transparent, var(--bg-1));
+}
+
+/* Merino — soft radial warmth */
+.merino-texture {
+    background-color: oklch(85% 0.01 60);
+    background-image:
+        repeating-radial-gradient(circle at 0 0,
+            var(--line-subtle) 0px,
+            transparent 20px),
+        linear-gradient(to bottom, transparent, var(--bg-1));
+}
+
+/* Dyneema — sharp technical grid */
+.dyneema-texture {
+    background-color: oklch(20% 0.015 240);
+    background-image:
+        repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            transparent 1px,
+            transparent 8px),
+        repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            transparent 1px,
+            transparent 8px);
+}
+
+.material-content {
+    padding: var(--space-lg, 24px);
+    flex: 1;
+}
+
+.material-tag {
+    font-family: 'Sora', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: var(--space-xs, 8px);
+    display: block;
+    font-weight: 600;
+}
+
+.material-content h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.material-content p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+}
+
+.material-stats {
+    margin-top: var(--space-md, 16px);
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs, 8px);
+}
+
+.material-stats li {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--surface-soft);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--line-subtle);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.material-philosophy {
+    text-align: center;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: var(--space-2xl, 48px);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* Light theme overrides */
+[data-theme="light"] .hemp-texture {
+    background-color: oklch(75% 0.04 80);
+}
+
+[data-theme="light"] .merino-texture {
+    background-color: oklch(92% 0.01 60);
+}
+
+[data-theme="light"] .dyneema-texture {
+    background-color: oklch(85% 0.01 240);
+}
+
+[data-theme="light"] .material-card {
+    background: var(--bg-1);
+}
+
+/* ═══════════════════════════════════════════════
    Responsive
    ═══════════════════════════════════════════════ */
 
@@ -1248,6 +1415,10 @@
     }
 
     .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .material-grid {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -1286,6 +1457,10 @@
     }
 
     .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .material-grid {
         grid-template-columns: 1fr;
     }
 

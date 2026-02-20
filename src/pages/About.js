@@ -73,6 +73,65 @@ export function renderAboutPage(container) {
       </div>
     </section>
 
+    <!-- Material Heritage -->
+    <section class="section" id="heritage">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <p class="eyebrow">${t('about.materials.eyebrow') || 'Material DNA'}</p>
+          <h2>${t('about.materials.title') || 'Bio-Mechanical Symbiosis'}</h2>
+          <p class="lead">${t('about.materials.subtitle') || 'Die radikale Energieabsorption von STF trifft auf die edelsten Fasern der Natur.'}</p>
+        </div>
+
+        <div class="material-grid" data-stagger>
+          <article class="material-card" data-stagger-item data-reveal="up">
+            <div class="material-texture hemp-texture"></div>
+            <div class="material-content">
+              <span class="material-tag">Industrial Hemp</span>
+              <h3>${t('about.hemp.title') || 'Carbon Negative Strength'}</h3>
+              <p>${t('about.hemp.text') || 'Hanf bietet die höchste Zugfestigkeit aller Naturfasern — das strukturelle Rückgrat unserer Protective Textiles.'}</p>
+              <ul class="material-stats">
+                <li>3× stärker als Baumwolle</li>
+                <li>Antibakteriell</li>
+                <li>CO₂-positiver Anbau</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="material-card" data-stagger-item data-reveal="up">
+            <div class="material-texture merino-texture"></div>
+            <div class="material-content">
+              <span class="material-tag">Extra-Fine Merino</span>
+              <h3>${t('about.merino.title') || 'Biological Precision'}</h3>
+              <p>${t('about.merino.text') || 'Direkt auf der Haut sorgt Merino für thermische Stabilität. Es reagiert auf Körpertemperatur, bevor du es spürst.'}</p>
+              <ul class="material-stats">
+                <li>17.5 Mikron Feinheit</li>
+                <li>Geruchsneutralisierend</li>
+                <li>Hydrophob & Atmungsaktiv</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="material-card material-card-full" data-stagger-item data-reveal="up">
+            <div class="material-texture dyneema-texture"></div>
+            <div class="material-content">
+              <span class="material-tag">Dyneema® UHMWPE</span>
+              <h3>${t('about.dyneema.title') || 'Only Where Necessary'}</h3>
+              <p>${t('about.dyneema.text') || 'Die stärkste Faser der Welt — 15× stärker als Stahl bei gleichem Gewicht. Wir setzen sie ausschließlich dort ein, wo Impact Distribution es erfordert. So dünn wie möglich.'}</p>
+              <ul class="material-stats">
+                <li>15× stärker als Stahl</li>
+                <li>Nur in Impact-Zonen</li>
+                <li>Minimaler Materialeinsatz</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="material-philosophy" data-reveal="up">
+          ${t('about.materials.philosophy') || 'Die wenigste Menge der besten Technologie. Jedes Gramm muss seinen Platz verdienen.'}
+        </p>
+      </div>
+    </section>
+
     <!-- Timeline -->
     <section class="section">
       <div class="container" style="max-width:800px;">
